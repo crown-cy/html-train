@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>几何图形 Hover 效果</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1e2230;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .shape {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* 悬浮文字：默认隐藏 */
+  .shape .label {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+  }
+
+  /* 1. 红色正方形（直角） */
+  .shape-1 {
+    border-radius: 0;
+    background: linear-gradient(135deg, #fca858, #f2564d);
+    box-shadow: 0 18px 28px rgba(242, 86, 77, 0.45);
+  }
+
+  /* 2. 绿色圆角正方形 */
+  .shape-2 {
+    border-radius: 16px;
+    background: linear-gradient(135deg, #4ade9d, #17b978);
+    box-shadow: 0 18px 28px rgba(23, 185, 120, 0.45);
+  }
+
+  /* 3. 紫色圆角正方形 */
+  .shape-3 {
+    border-radius: 20px;
+    background: linear-gradient(135deg, #9d8cc4, #6f5fa8);
+    box-shadow: 0 18px 28px rgba(111, 95, 168, 0.5);
+  }
+
+  /* 4. 黄色圆形 */
+  .shape-4 {
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fcd770, #f0a94a);
+    box-shadow: 0 18px 28px rgba(240, 169, 74, 0.45);
+  }
+
+  /* 5. 青绿色圆角正方形 */
+  .shape-5 {
+    border-radius: 10px;
+    background: linear-gradient(135deg, #52b79b, #2b7d6e);
+    box-shadow: 0 18px 28px rgba(43, 125, 110, 0.5);
+  }
+
+  /* 6. 紫色圆形 */
+  .shape-6 {
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b7a3e3, #8a6fc8);
+    box-shadow: 0 18px 28px rgba(138, 111, 200, 0.5);
+  }
+
+  /* 鼠标滑过：上移 10px，阴影偏移量变为 0，显示 hover 文字 */
+  .shape:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 28px rgba(0, 0, 0, 0.45);
+  }
+
+  .shape-1:hover { box-shadow: 0 0 28px rgba(242, 86, 77, 0.45); }
+  .shape-2:hover { box-shadow: 0 0 28px rgba(23, 185, 120, 0.45); }
+  .shape-3:hover { box-shadow: 0 0 28px rgba(111, 95, 168, 0.5); }
+  .shape-4:hover { box-shadow: 0 0 28px rgba(240, 169, 74, 0.45); }
+  .shape-5:hover { box-shadow: 0 0 28px rgba(43, 125, 110, 0.5); }
+  .shape-6:hover { box-shadow: 0 0 28px rgba(138, 111, 200, 0.5); }
+
+  .shape:hover .label {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="shape shape-1"><span class="label">hover</span></div>
+    <div class="shape shape-2"><span class="label">hover</span></div>
+    <div class="shape shape-3"><span class="label">hover</span></div>
+    <div class="shape shape-4"><span class="label">hover</span></div>
+    <div class="shape shape-5"><span class="label">hover</span></div>
+    <div class="shape shape-6"><span class="label">hover</span></div>
+  </div>
+</body>
+</html>
